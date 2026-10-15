@@ -1,0 +1,25 @@
+[Unit]
+Description=Umbrel community dashboard for Ubuntu Server
+After=network.target docker.service
+
+[Service]
+Type=simple
+User=umbrel-dashboard
+Group=umbrel-dashboard
+SupplementaryGroups=docker
+EnvironmentFile=/etc/umbrel-ubuntu/dashboard.env
+WorkingDirectory=/opt/umbrel-ubuntu/packages/ubuntu-server
+ExecStart=/usr/bin/node /opt/umbrel-ubuntu/packages/ubuntu-server/server.mjs
+Restart=on-failure
+RestartSec=5
+UMask=0077
+StateDirectory=umbrel-ubuntu
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ReadWritePaths=/var/lib/umbrel-ubuntu
+# Host power controls deliberately disabled: no sudo permission by default.
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

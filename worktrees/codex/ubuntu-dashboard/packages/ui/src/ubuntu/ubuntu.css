@@ -1,0 +1,199 @@
+.ubuntu-desktop {
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 28px;
+	min-height: 100vh;
+	color: #fff;
+	font-family: Inter, sans-serif;
+}
+.ubuntu-desktop header {
+	display: flex;
+	align-items: center;
+	gap: 18px;
+	margin: auto;
+	max-width: 1200px;
+}
+.ubuntu-desktop header span {
+	flex: 1;
+	font-weight: 600;
+}
+.ubuntu-desktop small {
+	display: block;
+	opacity: 0.65;
+	font-weight: 400;
+	font-size: 12px;
+}
+.ubuntu-desktop main {
+	margin: 60px auto;
+	max-width: 1100px;
+}
+.ubuntu-desktop h1 {
+	margin-bottom: 32px;
+	font-weight: 600;
+	font-size: clamp(26px, 4vw, 42px);
+	letter-spacing: -1.3px;
+}
+.ubuntu-desktop h2 {
+	margin-bottom: 16px;
+	font-weight: 600;
+	font-size: 23px;
+}
+.ubuntu-desktop h3 {
+	margin: 12px 0;
+	font-weight: 600;
+}
+.ubuntu-desktop p {
+	opacity: 0.8;
+	margin: 12px 0;
+	line-height: 1.6;
+}
+.ubuntu-panel {
+	backdrop-filter: blur(24px);
+	box-shadow: 0 10px 50px #0002;
+	border: 1px solid #ffffff26;
+	border-radius: 24px;
+	background: #15131c99;
+	padding: 26px;
+}
+.ubuntu-metrics {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 18px;
+}
+.ubuntu-metrics strong {
+	display: block;
+	margin: 20px 0 12px;
+	font-size: 23px;
+}
+.ubuntu-desktop progress {
+	width: 100%;
+	height: 6px;
+	accent-color: #a6a5ff;
+}
+.ubuntu-desktop nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin: 28px 0;
+}
+.ubuntu-heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.ubuntu-apps {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 20px;
+}
+.ubuntu-apps article {
+	border-radius: 20px;
+	background: #ffffff08;
+	padding: 24px 12px;
+	text-align: center;
+	overflow-wrap: anywhere;
+}
+.ubuntu-apps p {
+	overflow: hidden;
+	font-size: 12px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.ubuntu-app-icon img {
+	margin: auto;
+	box-shadow: 0 5px 15px #0004;
+	border-radius: 20px;
+	width: 80px;
+	height: 80px;
+}
+.ubuntu-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	margin: 12px 0;
+}
+.ubuntu-apps .ubuntu-actions {
+	justify-content: center;
+}
+.ubuntu-desktop a {
+	font-size: 13px;
+	text-decoration: underline;
+}
+.ubuntu-desktop input:not([type='file']),
+.ubuntu-desktop select {
+	border: 1px solid #ffffff36;
+	border-radius: 12px;
+	background: #ffffff12;
+	padding: 12px 16px;
+	max-width: 100%;
+	color: white;
+}
+.ubuntu-desktop select option {
+	background: #222;
+}
+.ubuntu-desktop label {
+	display: block;
+	margin: 20px 0;
+}
+.ubuntu-desktop label input,
+.ubuntu-desktop label select {
+	display: block;
+	margin-top: 8px;
+}
+.ubuntu-login {
+	margin: 100px auto;
+	max-width: 500px;
+}
+.ubuntu-login input {
+	width: 100%;
+}
+.ubuntu-error {
+	display: flex;
+	justify-content: space-between;
+	gap: 12px;
+	margin: 20px 0;
+	border-radius: 12px;
+	background: #692c40;
+	padding: 16px;
+}
+.ubuntu-files li {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	border-bottom: 1px solid #ffffff16;
+	padding: 12px 0;
+	overflow-wrap: anywhere;
+}
+.ubuntu-files li span {
+	flex: 1;
+	opacity: 0.65;
+	font-size: 12px;
+	text-align: right;
+}
+.ubuntu-muted {
+	margin-top: 30px !important;
+	max-width: 700px;
+	font-size: 12px;
+}
+@media (max-width: 650px) {
+	.ubuntu-desktop {
+		padding: 16px;
+	}
+	.ubuntu-desktop main {
+		margin: 36px auto;
+	}
+	.ubuntu-metrics {
+		grid-template-columns: 1fr;
+	}
+	.ubuntu-panel {
+		padding: 20px;
+	}
+	.ubuntu-files li {
+		flex-wrap: wrap;
+	}
+	.ubuntu-login {
+		margin: 40px auto;
+	}
+}
