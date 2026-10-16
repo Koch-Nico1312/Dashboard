@@ -29,6 +29,6 @@ export const appCatalog = [
 
 export function identifyApp(image, name) {
 	return (
-		appCatalog.find((app) => app.pattern && new RegExp(app.pattern, 'i').test(`${image} ${name}`)) || appCatalog.at(-1)
+		appCatalog.find((app) => app.pattern && new RegExp(`(?:^|[^a-z0-9])(?:${app.pattern})(?=$|[^a-z0-9])`, 'i').test(`${image} ${name}`)) || appCatalog.at(-1)
 	)
 }

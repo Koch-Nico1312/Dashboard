@@ -66,4 +66,5 @@ test('known container images get brand metadata; unknown services retain a Docke
 	assert.equal(identifyApp('ghcr.io/home-assistant/home-assistant:stable', 'ha').id, 'home-assistant')
 	assert.equal(identifyApp('adguard/adguardhome:latest', 'dns').id, 'adguard-home')
 	assert.equal(identifyApp('company/private:1', 'internal-service').id, 'docker')
+	assert.equal(identifyApp('company/complex-service:1', 'complex').id, 'docker')
 })
