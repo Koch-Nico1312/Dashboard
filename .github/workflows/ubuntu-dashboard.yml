@@ -1,0 +1,30 @@
+name: Ubuntu dashboard
+on:
+  pull_request:
+    paths:
+      - 'packages/ubuntu-server/**'
+      - 'packages/ui/**'
+      - '.github/workflows/ubuntu-dashboard.yml'
+  push:
+    paths:
+      - 'packages/ubuntu-server/**'
+      - 'packages/ui/**'
+      - '.github/workflows/ubuntu-dashboard.yml'
+permissions:
+  contents: read
+jobs:
+  ubuntu-dashboard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: packages/ui/package-lock.json
+      - run: npm --prefix packages/ui ci --ignore-scripts
+      - run: npm --prefix packages/ui run build:ubuntu
+      - run: npm --prefix packages/ubuntu-server test
+      - run: node packages/ubuntu-server/test/live-docker.mjs
+        env:
+          RUN_LIVE_DOCKER: 'true'

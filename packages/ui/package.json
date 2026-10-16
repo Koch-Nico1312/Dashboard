@@ -7,6 +7,8 @@
 		"node": "^22.13.0"
 	},
 	"scripts": {
+		"build:ubuntu": "tsc --project tsconfig.ubuntu.json && vite build --config vite.ubuntu.config.ts",
+		"typecheck:ubuntu": "tsc --project tsconfig.ubuntu.json",
 		"translations:generate": "node update-translations.js --generate",
 		"translations:plan": "node update-translations.js --plan",
 		"translations:validate": "node update-translations.js --validate",
